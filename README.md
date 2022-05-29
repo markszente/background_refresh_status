@@ -23,6 +23,7 @@ final status = await BackgroundRefreshStatus.status;
 ```
 
 The possible return values are:
+
 | Value        | Meaning                                                                                |
 |--------------|----------------------------------------------------------------------------------------|
 | `restricted` | Background updates are unavailable and the user cannot enable them again.              |
