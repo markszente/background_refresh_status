@@ -12,7 +12,7 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '2';
+      return 2;
     });
   });
 
@@ -20,7 +20,7 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getStatus', () async {
+  test('status', () async {
     expect(await platform.getStatus(), Status.available);
   });
 }

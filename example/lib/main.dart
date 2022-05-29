@@ -18,13 +18,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Status? _status;
-  final _backgroundRefreshStatusPlugin = BackgroundRefreshStatus();
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    print("x");
     if (state == AppLifecycleState.resumed) {
-      initPlatformState();
+      initBackgroundStatus();
     }
   }
 
@@ -32,16 +30,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    initPlatformState();
+    initBackgroundStatus();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
+  Future<void> initBackgroundStatus() async {
     Status status;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      status = await _backgroundRefreshStatusPlugin.getStatus();
+      status = await BackgroundRefreshStatus.status;
     } on PlatformException catch (e) {
       print(e);
       return;

@@ -21,13 +21,11 @@ void main() {
         initialPlatform, isInstanceOf<MethodChannelBackgroundRefreshStatus>());
   });
 
-  test('getStatus', () async {
-    BackgroundRefreshStatus backgroundRefreshStatusPlugin =
-        BackgroundRefreshStatus();
+  test('status', () async {
     MockBackgroundRefreshStatusPlatform fakePlatform =
         MockBackgroundRefreshStatusPlatform();
     BackgroundRefreshStatusPlatform.instance = fakePlatform;
 
-    expect(await backgroundRefreshStatusPlugin.getStatus(), Status.available);
+    expect(await BackgroundRefreshStatus.status, Status.available);
   });
 }
