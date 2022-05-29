@@ -1,6 +1,6 @@
 name: background_refresh_status
 description: A plugin to retrieve backgroundRefreshStatus on iOS
-version: 0.0.1
+version: 0.0.2
 homepage: https://markszente.io
 repository: https://github.com/markszente/background_refresh_status
 
