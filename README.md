@@ -5,13 +5,12 @@ A Flutter plugin to retrieve background refresh status on iOS.
 ## Getting Started
 
 ### Installation
-For now, the package is not available on [pub.dev](https://pub.dev), so you can use it directly from GitHub:
+
+Add it to your `dependencies` in `pubspec.yaml`:
 
 ```
 dependencies:
-  background_refresh_status:
-    git: 
-      url: https://github.com/markszente/background_refresh_status.git
+  background_refresh_status: ^0.0.1
 ```
 
 ### Usage
